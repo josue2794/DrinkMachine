@@ -1,0 +1,149 @@
+﻿@model Drinks.Models.MachineViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <h1>Coin information</h1>
+
+        <div class="row coins-container">
+
+            <div class="card" style="width: 18rem;">
+                <h2>Penny - $0.01</h2>
+                <div class="card-body">
+                    <input ngDefaultControl name="pennyCoins" type="number" class="form-control" [(ngModel)]="pennyCoins" min="0">
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <h2>Nickel - $0.05</h2>
+                <div class="card-body">
+                    <input ngDefaultControl name="nickelCoins" type="number" class="form-control" [(ngModel)]="nickelCoins" min=0>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <h2>Dime - $0.10</h2>
+                <div class="card-body">
+                    <input ngDefaultControl name="dimeCoins" type="number" class="form-control" [(ngModel)]="dimeCoins" min=0>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <h2>Quarter - $0.25</h2>
+                <div class="card-body">
+                    <input ngDefaultControl name="quarterCoins" type="number" class="form-control" [(ngModel)]="quarterCoins" min=0>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <h1>Product information</h1>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Coke</h3>
+                    <p>{{drinks.coke.quantity}} drinks available, Cost = {{drinks.coke.cost}}</p>
+                </div>
+                <div ngDefaultControl class="col-md-6">
+                    <input [disabled]="drinks.coke.quantity == 0"
+                           name="cokeQuantity"
+                           type="number"
+                           class="form-control"
+                           [(ngModel)]="cokeQuantity"
+                           min=0
+                           [max]="drinks.coke.quantity"
+                           (ngModelChange)="validateDrinks('coke')">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Pepsi</h3>
+                    <p>{{drinks.pepsi.quantity}} drinks available, Cost = {{drinks.pepsi.cost}}</p>
+                </div>
+                <div ngDefaultControl class="col-md-6">
+                    <input [disabled]="drinks.pepsi.quantity == 0"
+                           name="pepsiQuantity"
+                           type="number"
+                           class="form-control"
+                           [(ngModel)]="pepsiQuantity"
+                           min=0
+                           [max]="drinks.pepsi.quantity"
+                           (ngModelChange)="validateDrinks('pepsi')">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Soda</h3>
+                    <p>{{drinks.soda.quantity}} drinks available, Cost = {{drinks.soda.cost}}</p>
+                </div>
+                <div ngDefaultControl class="col-md-6">
+                    <input [disabled]="drinks.soda.quantity == 0"
+                           name="sodaQuantity"
+                           type="number"
+                           class="form-control"
+                           [(ngModel)]="sodaQuantity"
+                           min=0
+                           [max]="drinks.soda.quantity"
+                           (ngModelChange)="validateDrinks('soda')">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>ORDER TOTAL: <span class="alert alert-dark">${{totalCost}}</span></h3>
+        </div>
+    </div>
+
+    <div class="row float-right">
+        <button (click)="buyDrinks()" [disabled]="totalCost == '0.00'" type="button" [ngClass]="{'btn-dark': totalCost == '0.00', 'btn-primary' : totalCost != '0.00' }" class="btn w-25 m-auto">Get Drinks</button>
+        <button type="button" id="openModalButton" [hidden]="true" data-bs-toggle="modal" data-bs-target="#myModal">Open Modal</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">{{titleModal}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{messageModal}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

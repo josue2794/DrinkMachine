@@ -1,0 +1,20 @@
+﻿.container {
+    -webkit-box-shadow: 5px 5px 15px -1px #000000;
+    box-shadow: 5px 5px 15px -1px #000000;
+    border-radius: 5px;
+    margin: 50px auto;
+    /*background-color: #ccc;*/
+    padding: 20px;
+}
+
+.coins-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .coins-container .card {
+        margin: 5px;
+        /*background-color: #ccc;*/
+        border: none;
+    }
