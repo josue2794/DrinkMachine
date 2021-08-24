@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{A8A7EC9A-B694-482B-A5BF-6A0B17369F03}|Drinks">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Drinks/Data/CoinSystem.cs">
+    <Files>
+      <File FileName="Drinks/Data/CoinSystem.cs" Line="1" Column="1" />
+      <File FileName="Drinks/Views/Home/Index.cshtml" />
+      <File FileName="Drinks/Models/MachineModel.cs" />
+      <File FileName="Drinks/Controllers/HomeController.cs" />
+      <File FileName="Drinks/Models/MachineViewModel.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Drinks" expanded="True">
+            <Node name="Drinks" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="CoinSystem.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Drinks PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
